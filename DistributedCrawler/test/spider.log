@@ -1,0 +1,18 @@
+2019/03/25 20:55:40 - ERROR - qwe 插入失败
+Traceback (most recent call last):
+  File "C:\Users\transformers\Desktop\GraduationProject\DistributedCrawler\mysqldb\dao.py", line 25, in insert_user
+    self.cursor.execute(sql, user)
+  File "C:\Users\transformers\AppData\Local\Programs\Python\Python35\lib\site-packages\pymysql\cursors.py", line 168, in execute
+    query = self.mogrify(query, args)
+  File "C:\Users\transformers\AppData\Local\Programs\Python\Python35\lib\site-packages\pymysql\cursors.py", line 147, in mogrify
+    query = query % self._escape_args(args, conn)
+TypeError: %d format: a number is required, not str
+2019/03/25 20:58:04 - ERROR - qwe 插入失败
+Traceback (most recent call last):
+  File "C:\Users\transformers\Desktop\GraduationProject\DistributedCrawler\mysqldb\dao.py", line 25, in insert_user
+    self.cursor.execute(sql, user)
+  File "C:\Users\transformers\AppData\Local\Programs\Python\Python35\lib\site-packages\pymysql\cursors.py", line 168, in execute
+    query = self.mogrify(query, args)
+  File "C:\Users\transformers\AppData\Local\Programs\Python\Python35\lib\site-packages\pymysql\cursors.py", line 147, in mogrify
+    query = query % self._escape_args(args, conn)
+TypeError: %d format: a number is required, not str

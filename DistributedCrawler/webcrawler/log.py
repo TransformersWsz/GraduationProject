@@ -26,7 +26,7 @@ class Log(object):
         将运行信息输出到日志中
         :return: None
         """
-        file_handler = logging.FileHandler("spider.log")
+        file_handler = logging.FileHandler("spider.log", encoding='utf-8')
         file_handler.setFormatter(self.formatter)
         file_handler.setLevel(logging.ERROR)
         self.logger.addHandler(file_handler)

@@ -10,7 +10,7 @@ stream_handler.setLevel(level=logging.INFO)
 logger.addHandler(stream_handler)
 
 # FileHandler
-file_handler = logging.FileHandler('output.log')
+file_handler = logging.FileHandler('output.log', encoding='utf-8')
 file_handler.setLevel(level=logging.ERROR)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 file_handler.setFormatter(formatter)
