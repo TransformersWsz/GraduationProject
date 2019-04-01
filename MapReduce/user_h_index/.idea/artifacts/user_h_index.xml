@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="user_h_index">
+    <output-path>$PROJECT_DIR$/out/artifacts/user_h_index</output-path>
+    <root id="archive" name="user_h_index.jar">
+      <element id="module-output" name="user_h_index" />
+    </root>
+  </artifact>
+</component>

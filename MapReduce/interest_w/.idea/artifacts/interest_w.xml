@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="interest_w">
+    <output-path>$PROJECT_DIR$/out/artifacts/interest_w</output-path>
+    <root id="archive" name="interest_w.jar">
+      <element id="module-output" name="interest_w" />
+    </root>
+  </artifact>
+</component>

@@ -22,7 +22,7 @@ class Hdfs(object):
         rows = self.cursor.fetchall()
         with open("interest_person.txt", "w") as f:
             for row in rows:
-                content = "{name}:1\n".format(name=row[0])
+                content = "{name}--->1\n".format(name=row[0])
                 f.write(content)
                 print(content)
         print("write to interest_person.txt complete!!!")
@@ -39,7 +39,7 @@ class Hdfs(object):
         rows = self.cursor.fetchall()
         with open("interest_w.txt", "w") as f:
             for row in rows:
-                content = "{name}:{w}\n".format(name=row[0], w=row[1])
+                content = "{name}--->{w}\n".format(name=row[0], w=row[1])
                 f.write(content)
                 print(content)
         print("write to interest_w.txt complete!!!")
@@ -55,7 +55,7 @@ class Hdfs(object):
         rows = self.cursor.fetchall()
         with open("user_h_index.txt", "w") as f:
             for row in rows:
-                content = "{user_id}:{h_index}\n".format(user_id=row[0], h_index=row[1])
+                content = "{user_id}--->{h_index}\n".format(user_id=row[0], h_index=row[1])
                 f.write(content)
                 print(content)
         print("write to user_h_index.txt complete!!!")
@@ -70,5 +70,5 @@ class Hdfs(object):
 
 if __name__ == "__main__":
     hdfs = Hdfs()
-    hdfs.db_to_user_h_index()
+    hdfs.db_to_interest_person()
     hdfs.close_db()
