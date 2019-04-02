@@ -2,43 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e0aba60-3618-4d15-82f8-3c745d3c266c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../MapReduce/interest_person/result/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/interest_person/result/interest_person.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/interest_person/result/interest_person.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/interest_person/result/interest_person_origin.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/interest_person/result/interest_person_top10" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/interest_person/src/com/hadoop/mapreduce/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/interest_w/.idea/artifacts/interest_w.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/interest_w/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/interest_w/.idea/copyright/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/interest_w/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/interest_w/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/interest_w/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/interest_w/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/interest_w/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/interest_w/result/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/interest_w/result/interest_w.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/interest_w/result/interest_w.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/interest_w/result/interest_w_origin.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/interest_w/result/interest_w_top10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/interest_w/src/com/hadoop/mapreduce/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/user_h_index/.idea/artifacts/user_h_index.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/user_h_index/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/user_h_index/.idea/copyright/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/user_h_index/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/user_h_index/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/user_h_index/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/user_h_index/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/user_h_index/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/user_h_index/input/user_h_index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/user_h_index/result/user_h_index.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/user_h_index/result/user_h_index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/user_h_index/result/user_h_index_origin.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/user_h_index/result/user_h_index_top10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MapReduce/user_h_index/src/com/hadoop/mapreduce/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MapReduce/txt_to_db/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MapReduce/txt_to_db/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MapReduce/txt_to_db/.idea/txt_to_db.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MapReduce/txt_to_db/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MapReduce/txt_to_db/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MapReduce/txt_to_db/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MapReduce/txt_to_db/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MapReduce/txt_to_db/txt/interest_person_top10.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MapReduce/txt_to_db/txt/user_h_index.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MapReduce/txt_to_db/txttodb/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MapReduce/txt_to_db/txttodb/setting.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MapReduce/txt_to_db/txttodb/turn.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbtofile/hdfs.py" beforeDir="false" afterPath="$PROJECT_DIR$/dbtofile/hdfs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbtofile/interest_person.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MapReduce/interest_w/input/interest_w.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapReduce/artifact/.idea/artifacts/artifact_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapReduce/artifact/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapReduce/artifact/.idea/copyright/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapReduce/artifact/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapReduce/artifact/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapReduce/artifact/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapReduce/artifact/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapReduce/artifact/artifact.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapReduce/artifact/input/user_h_index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapReduce/artifact/out/artifacts/artifact_jar/artifact.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapReduce/artifact/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapReduce/artifact/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapReduce/artifact/src/main/java/com/hadoop/mapreduce/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapReduce/artifact/target/classes/com/hadoop/mapreduce/Main$FloatDescSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapReduce/artifact/target/classes/com/hadoop/mapreduce/Main$IntSumReducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapReduce/artifact/target/classes/com/hadoop/mapreduce/Main$TokenizerMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapReduce/artifact/target/classes/com/hadoop/mapreduce/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapReduce/interest_person/result/interest_person_top10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapReduce/interest_w/result/interest_w_top10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MapReduce/txt_to_db/txt/interest_w_top10.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,30 +69,15 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbtofile/interest_w.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="4480" column="13" lean-forward="true" selection-start-line="4480" selection-start-column="13" selection-end-line="4480" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dbtofile/user_h_index.txt">
+        <entry file="file://$PROJECT_DIR$/mysqldb/dao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2365">
-              <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbtofile/interest_person.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="18941" column="17" lean-forward="true" selection-start-line="18941" selection-start-column="17" selection-end-line="18941" selection-end-column="17" />
+            <state relative-caret-position="-18">
+              <caret line="101" column="20" lean-forward="true" selection-start-line="101" selection-start-column="20" selection-end-line="101" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -189,9 +169,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2880" />
-    <option name="width" value="960" />
-    <option name="height" value="1080" />
+    <option name="width" value="683" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -398,16 +377,19 @@
       <workItem from="1553516820227" duration="4601000" />
       <workItem from="1554032919224" duration="2926000" />
       <workItem from="1554088001259" duration="4816000" />
+      <workItem from="1554182656473" duration="1199000" />
+      <workItem from="1554191741673" duration="874000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67868000" />
+    <option name="totallyTimeSpent" value="69941000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2880" y="0" width="960" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="683" height="728" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16444445" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.17080745" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -643,23 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbtofile/setting.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysqldb/dao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="119" column="22" selection-start-line="119" selection-start-column="15" selection-end-line="119" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/910881056/builtins.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/typing.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -678,34 +643,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dbtofile/interest_w.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85120">
+          <caret line="4480" column="13" selection-start-line="4480" selection-start-column="13" selection-end-line="4480" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbtofile/user_h_index.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbtofile/setting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dbtofile/interest_person.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="18941" column="17" lean-forward="true" selection-start-line="18941" selection-start-column="17" selection-end-line="18941" selection-end-column="17" />
+        <state relative-caret-position="359879">
+          <caret line="18941" column="17" selection-start-line="18941" selection-start-column="17" selection-end-line="18941" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dbtofile/hdfs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="71" column="17" lean-forward="true" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="17" />
+        <state relative-caret-position="-38">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbtofile/interest_w.txt">
+    <entry file="file://$PROJECT_DIR$/mysqldb/dao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="4480" column="13" lean-forward="true" selection-start-line="4480" selection-start-column="13" selection-end-line="4480" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dbtofile/user_h_index.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2365">
-          <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+        <state relative-caret-position="-18">
+          <caret line="101" column="20" lean-forward="true" selection-start-line="101" selection-start-column="20" selection-end-line="101" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

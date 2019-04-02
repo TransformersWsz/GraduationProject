@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Aminer</title>
+	<link type="text/css" rel='stylesheet' href='/css/bootstrap.min.css' />
+	<link type="text/css" rel='stylesheet' href='/css/bootstrap-table.min.css' />
+	<link rel="icon" type="image/png" href="/img/favicon.ico" />
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap-table.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap-table-toolbar.js"></script>
+	<script type="text/javascript" src="/js/echarts.min.js"></script>
+	<style>
+		.chart {
+			margin-left: 10px;
+			margin-right: 10px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		#left {
+			flex: 1;
+			height: 500px;
+			margin-right: 5px;
+		}
+
+		#right {
+			flex: 1;
+			height: 500px;
+			margin-left: 5px;
+		}
+
+		.out {
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 50px;
+        }
+	</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse  navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">Analysis</a>
+			</div>
+		</div>
+	</nav>
+
+	<p style="height: 50px"></p>
+
+	<div class="chart">
+		<div id="left"></div>
+		<div id="right"></div>
+	</div>
+
+	<div id="toolbar" class="btn-group">
+			<button type="button" class="btn btn-default" onclick="exportExcel()">
+				<i class="glyphicon glyphicon-export"></i>
+			</button>
+	</div>
+
+	<div class="out">
+		<table id="table" data-show-fullscreen="true"></table>
+	</div>
+
+
+</body>
+<script>
+	var leftChart;
+	var rightChart;
+
+	var $table = $("#table");
+
+	// 初始化图表dom
+	function initChartsDom() {
+		leftChart = echarts.init(document.getElementById("left"));
+		rightChart = echarts.init(document.getElementById("right"));
+	}
+
+	// 向图表填充数据
+	function fillCharts() {
+		$.get("/person", (data) => {
+			const option = {
+				title: {
+					text: 'Persons of different interests',
+					x: 'left'
+				},
+				color: ['#3398DB'],
+				tooltip: {
+					trigger: 'axis',
+					axisPointer: { // 坐标轴指示器，坐标轴触发有效
+						type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+					}
+				},
+				grid: {
+					left: '3%',
+					right: '3%',
+					bottom: '3%',
+					containLabel: true
+				},
+				xAxis: [{
+					type: 'category',
+					data: data[0],
+					axisTick: {
+						alignWithLabel: true
+					}
+				}],
+				yAxis: [{
+					type: 'value'
+				}],
+				series: [{
+					type: 'bar',
+					barWidth: '60%',
+					data: data[1]
+				}]
+			};
+			leftChart.setOption(option);
+		});
+
+		$.get("/weight", (data) => {
+			const option = {
+				title: {
+					text: 'Weight of different interests',
+					x: 'center'
+				},
+				tooltip: {
+					trigger: 'item',
+					formatter: "{b} <br/>{a} : {c} ({d}%)"
+				},
+				legend: {
+					x: 'center',
+					y: 'bottom',
+					data: data[0]
+				},
+				
+				calculable: true,
+				series: [
+
+					{
+						name: "weight",
+						type: 'pie',
+						radius: [30, 150],
+						center: ['50%', '50%'],
+						roseType: 'area',
+						data: data[1]
+					}
+				]
+			};
+			rightChart.setOption(option);
+		});
+	}
+
+	// 导出excel
+	function exportExcel() {
+		window.location.href = "/excel";
+	}
+
+	const tableinit = function() {
+		const otableinit = new Object();
+		otableinit.init = () => {
+			$table.bootstrapTable({
+                toolbar: "#toolbar",
+                showRefresh: true,
+                showColumns: true,
+				url: "/hindex",
+				sidePagination:'server',
+                method: 'get',
+                cache: false,
+                striped: true,
+                pagination: true,
+                pageNumber: 1,
+                pageSize: 10,
+				pageList: [5, 10, 20, 50],
+				search: true,
+				searchOnEnterKey: true,
+				advancedSearch:true,
+				idTable:"advancedTable",
+				queryParamsType: "limit", //参数格式,发送标准的RESTFul类型的参数请求
+                queryParams: (params) => {
+                    return params;
+                },
+                columns: [
+                    {
+                        title: "name",
+                        field: "name"
+					},
+					
+					{
+                        title: "h_index",
+                        field: "h_index"
+					},
+
+                    {
+                        title: "paper",
+                        field: "paper"
+					},
+					
+					{
+                        title: "citation",
+                        field: "citation"
+					},
+					
+					{
+                        title: "g_index",
+                        field: "g_index"
+					},
+					
+					{
+                        title: "sociability",
+                        field: "sociability"
+					},
+					
+					{
+                        title: "diversity",
+                        field: "diversity"
+					},
+					
+					{
+                        title: "activity",
+                        field: "activity"
+					},
+                ]
+            });
+		};
+		return otableinit;
+	};
+
+	$(() => {
+		initChartsDom();
+		fillCharts();
+
+		window.onresize = function () {
+            rightChart.resize();
+            leftChart.resize();
+		};
+		
+		const otable = new tableinit();
+		otable.init();
+	});
+</script>
+
+</html>
