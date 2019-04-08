@@ -43,15 +43,21 @@ const getHindex = (db, req, res, next) => {
         });
     }
     else {
-        db.sequelize.query("select user_h_index.user_id, name, paper, citation, user.h_index, g_index, sociability, diversity, activity from user join user_h_index on user.user_id = user_h_index.user_id where name like '%?%' or paper like '%?%' or citation like '%?%' or user.h_index like '%?%' or g_index like '%?%' or sociability like '%?%' or diversity like '%?%' or activity like '%?%' limit ?, ?;", {
-            replacements: [req.query.search, req.query.search, req.query.search, req.query.search, req.query.search, req.query.search, req.query.search, req.query.search, parseInt(req.query.offset), parseInt(req.query.limit)],
+        const search = req.query.search;
+        const offset = req.query.offset;
+        const limit = req.query.limit;
+        let rowSql = `select user_h_index.user_id, name, paper, citation, user.h_index, g_index, sociability, diversity, activity from user join user_h_index on user.user_id = user_h_index.user_id where name like '%${search}%' or paper like '%${search}%' or citation like '%${search}%' or user.h_index like '%${search}%' or g_index like '%${search}%' or sociability like '%${search}%' or diversity like '%${search}%' or activity like '%${search}%' limit ${offset}, ${limit};`;
+
+        let totalSql = `select user_h_index.user_id, name, paper, citation, user.h_index, g_index, sociability, diversity, activity from user join user_h_index on user.user_id = user_h_index.user_id where name like '%${search}%' or paper like '%${search}%' or citation like '%${search}%' or user.h_index like '%${search}%' or g_index like '%${search}%' or sociability like '%${search}%' or diversity like '%${search}%' or activity like '%${search}%';`;
+        console.log(rowSql);
+        db.sequelize.query(rowSql, {
             type: db.sequelize.QueryTypes.SELECT
         }).then((selectUH) => {
-            db.sequelize.query("select count(user_id) as nums from user", {
+            db.sequelize.query(totalSql, {
                 type: db.sequelize.QueryTypes.SELECT
-            }).then((selectUserRes) => {
+            }).then((selectTotalUserRes) => {
                 res.json({
-                    total: selectUserRes[0].nums,
+                    total: selectTotalUserRes.length,
                     rows: selectUH
                 });
             });
