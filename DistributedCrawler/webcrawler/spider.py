@@ -4,11 +4,13 @@ from .log import Log
 from .offsetsize import Offsetsize
 from mysqldb.dao import MysqlClient
 
+
 class Spider(object):
+
     def __init__(self):
         self.offsetSize = Offsetsize()
         self.mysqlClient = MysqlClient()
-        self.log = Log()
+        self.log = Log("spider.log")
 
     def insert_data(self, data):
         for info in data:

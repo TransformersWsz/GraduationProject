@@ -4,12 +4,14 @@ from webcrawler.log import Log
 
 from .setting import *
 
+
 class MysqlClient(object):
+
     def __init__(self):
         self.conn = pymysql.connect(host=HOST, port=PORT, user=USER, password=PASSWORD, db=DB)
         self.cursor = self.conn.cursor()
 
-        self.log = Log()
+        self.log = Log("dao.log")
 
     def insert_user(self, user: tuple):
         """
@@ -47,8 +49,23 @@ class MysqlClient(object):
             row = self.cursor.fetchone()
             return -1 if row == None else row[0]
         except Exception as e:
-            print(e)
+            self.log.error("查询名为 {name} 的用户失败。".format(name=user_name))
             return -1
+
+    def select_all_user(self):
+        """
+        查询所有的用户
+        :return: list
+        """
+        try:
+            sql = "select name, paper, citation, h_index, g_index, sociability, diversity, activity from user"
+            self.cursor.execute(sql)
+
+            rows = self.cursor.fetchall()
+            return rows
+        except Exception as e:
+            self.log.error("查询所有的用户失败。")
+            return []
 
 
     def insert_interest(self, interest: tuple):
@@ -73,6 +90,24 @@ class MysqlClient(object):
                 return -1
         else:
             return isExist
+
+    def insert_similarity(self, similarity: tuple):
+        """
+        插入两个学者的相似度
+        :param similarity: (f_name, s_name, distance)
+        :return: 1: success 0: failure
+        """
+        try:
+            sql = "insert into similarity VALUES (%s, %s, %s)"
+            self.cursor.execute(sql, similarity)
+            self.conn.commit()
+
+            return 1
+        except Exception as e:
+            self.conn.rollback()
+
+            return 0
+
 
     def select_interest(self, interest_name: str):
         """

@@ -4,10 +4,16 @@ var router = express.Router();
 const db = require("../config/db.config");
 const commonController = require("../controllers/common.controller");
 
-/* GET home page. */
+/* GET home/en page. */
 router.get("/", function (req, res, next) {
 	res.render("index");
 });
+
+/* GET home/zh_cn page. */
+router.get("/zh-cn", function (req, res, next) {
+	res.render("index_zhcn");
+});
+
 
 // 获取研究人数占前10的领域
 router.get("/person", (req, res, next) => {

@@ -9,6 +9,7 @@
 	<script type="text/javascript" src="/js/jquery.js"></script>
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/js/bootstrap-table.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap-table-zh-CN.min.js"></script>
 	<script type="text/javascript" src="/js/bootstrap-table-toolbar.js"></script>
 	<script type="text/javascript" src="/js/echarts.min.js"></script>
 	<style>
@@ -44,7 +45,7 @@
 	<nav class="navbar navbar-inverse  navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/">Analysis</a>
+				<a class="navbar-brand" href="/zh-cn">数据分析</a>
 			</div>
 		</div>
 	</nav>
@@ -62,10 +63,10 @@
 			</button>
 
 			<button type="button" class="btn btn-default dropdown-toggle" style="margin-left: 10px" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				en <span class="caret"></span>
+				中文 <span class="caret"></span>
 			  </button>
 			  <ul class="dropdown-menu">
-				<li><a href="/zh-cn">中文</a></li>
+				<li><a href="/">en</a></li>
 			  </ul>
 	</div>
 
@@ -89,10 +90,10 @@
 
 	// 向图表填充数据
 	function fillCharts() {
-		$.get("/person?lan=en", (data) => {
+		$.get("/person?lan=zh_cn", (data) => {
 			const option = {
 				title: {
-					text: 'Persons of different interests',
+					text: '各领域研究人数',
 					x: 'left'
 				},
 				color: ['#3398DB'],
@@ -127,10 +128,10 @@
 			leftChart.setOption(option);
 		});
 
-		$.get("/weight?lan=en", (data) => {
+		$.get("/weight?lan=zh_cn", (data) => {
 			const option = {
 				title: {
-					text: 'Share of different interests',
+					text: '各领域所占比重',
 					x: 'center'
 				},
 				tooltip: {
@@ -162,7 +163,7 @@
 
 	// 导出excel
 	function exportExcel() {
-		window.location.href = "/excel?lan=en";
+		window.location.href = "/excel?lan=zh_cn";
 	}
 
 	const tableinit = function() {
@@ -189,42 +190,42 @@
                 },
                 columns: [
                     {
-                        title: "name",
+                        title: "姓名",
                         field: "name"
 					},
 					
 					{
-                        title: "h_index",
+                        title: "h指数",
                         field: "h_index"
-					},
-
-					{
-                        title: "g_index",
+                    },
+                    
+                    {
+                        title: "g指数",
                         field: "g_index"
 					},
 
                     {
-                        title: "paper",
+                        title: "论文数",
                         field: "paper"
 					},
 					
 					{
-                        title: "citation",
+                        title: "引用次数",
                         field: "citation"
 					},
 					
 					{
-                        title: "sociability",
+                        title: "群集度",
                         field: "sociability"
 					},
 					
 					{
-                        title: "diversity",
+                        title: "多样性",
                         field: "diversity"
 					},
 					
 					{
-                        title: "activity",
+                        title: "活跃度",
                         field: "activity"
 					},
                 ]
