@@ -1,5 +1,19 @@
 const nodeExcel = require("excel-export");
 
+// 获取学者的个人信息
+const getInfo = (db, req, res, next) => {
+    const info;
+    const sql = "select name, paper, citation, h_index, g_index, sociability, diversity, activity from user where user_id = ?";
+    db.sequelize.query(sql, {
+        replacements: [parseInt(req.query.offset)],
+        type: db.sequelize.QueryTypes.SELECT
+    }).then((selectInfoRes) => {
+        info = selectInfoRes[0];
+    });
+    return info;
+};
+
+// 获取各研究领域的人数
 const getPerson = (db, req, res, next) => {
     let sql = "select name, person from interest_person_top10";
     if (req.query.lan == "zh_cn") {
@@ -19,6 +33,7 @@ const getPerson = (db, req, res, next) => {
     });
 };
 
+// 获取各研究领域所占的比重
 const getWeight = (db, req, res, next) => {
     let sql = "select w as value, name from interest_w_top10"
     if (req.query.lan == "zh_cn") {
@@ -35,6 +50,7 @@ const getWeight = (db, req, res, next) => {
     });
 };
 
+// 获取按照h_index高低排序的所有学者信息
 const getHindex = (db, req, res, next) => {
     if (req.query.search == null || req.query.search == "") {
         db.sequelize.query("select user_h_index.user_id, name, paper, citation, user.h_index, g_index, sociability, diversity, activity from user join user_h_index on user.user_id = user_h_index.user_id limit ?, ?", {
@@ -136,6 +152,7 @@ const formatResult = (selectRes) => {
     return result;
 };
 
+// 导出excel
 const exportExcel = (db, req, res, next) => {
     let name = "aminers";
     let cols = [
@@ -230,6 +247,7 @@ const exportExcel = (db, req, res, next) => {
 };
 
 const commonController = {};
+commonController.getInfo = getInfo;
 commonController.getPerson = getPerson;
 commonController.getWeight = getWeight;
 commonController.getHindex = getHindex;

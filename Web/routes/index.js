@@ -14,6 +14,12 @@ router.get("/zh-cn", function (req, res, next) {
 	res.render("index_zhcn");
 });
 
+/* GET info page. */
+router.get("/info", function (req, res, next) {
+	const info = commonController.getInfo(db, req, res, next);
+	res.render("info", {info: info});
+});
+
 
 // 获取研究人数占前10的领域
 router.get("/person", (req, res, next) => {
