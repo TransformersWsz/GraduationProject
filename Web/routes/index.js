@@ -10,14 +10,27 @@ router.get("/", function (req, res, next) {
 });
 
 /* GET home/zh_cn page. */
-router.get("/zh-cn", function (req, res, next) {
+router.get("/zh_cn", function (req, res, next) {
 	res.render("index_zhcn");
 });
 
-/* GET info page. */
-router.get("/info", function (req, res, next) {
-	const info = commonController.getInfo(db, req, res, next);
-	res.render("info", {info: info});
+/* GET personal  homepage. */
+router.get("/homepage", (req, res, next) => {
+	commonController.getUserInfo(db, req, res, next).then((userInfo) => {
+		if (req.query.lan == "en") {
+			res.render("info", userInfo);
+		}
+		else {
+			res.render("info_zhcn", userInfo);
+		}
+	}).catch((error) => {
+		res.json(error);
+	});
+})
+
+/* 接收研究人员的信息，返回研究人员的user_id. */
+router.post("/info", function (req, res, next) {
+	commonController.getUserId(db, req, res, next);
 });
 
 
@@ -36,9 +49,22 @@ router.get("/hindex", (req, res, next) => {
 	commonController.getHindex(db, req, res, next);
 });
 
+// 获取某个学者的前10名相似学者
+router.get("/similarity", (req, res, next) => {
+	commonController.getSimilarity(db, req, res, next);
+});
+
+
+// 导出excel
 router.get("/excel", (req, res, next) => {
 	commonController.exportExcel(db, req, res, next);
 });
+
+// 导出某学者的前10名相似学者
+router.get("/similarityexcel", (req, res, next) => {
+	commonController.exportSimilarityExcel(db, req, res, next);
+});
+
 
 
 module.exports = router;

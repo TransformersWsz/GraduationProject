@@ -121,7 +121,6 @@ class MysqlClient(object):
         row = self.cursor.fetchone()
         return -1 if row == None else row[0]
 
-
     def insert_user_interest(self, user_interest: tuple):
         """
         插入 user_interest

@@ -65,7 +65,7 @@
 				en <span class="caret"></span>
 			  </button>
 			  <ul class="dropdown-menu">
-				<li><a href="/zh-cn">中文</a></li>
+				<li><a href="/zh_cn">中文</a></li>
 			  </ul>
 	</div>
 
@@ -167,12 +167,12 @@
 
 	const tableinit = function() {
 		const otableinit = new Object();
-		otableinit.init = () => {
+		otableinit.init = (url) => {
 			$table.bootstrapTable({
                 toolbar: "#toolbar",
                 showRefresh: true,
                 showColumns: true,
-				url: "/hindex",
+				url: url,
 				sidePagination:'server',
                 method: 'get',
                 cache: false,
@@ -191,7 +191,11 @@
 
                     {
                         title: "name",
-                        field: "name"
+						field: "name",
+						formatter: (value, row, index) => {
+							let p = `<p style='color: #428bca'>${value}</a>`;
+							return p;
+						}
 					},
 					
 					{
@@ -230,8 +234,22 @@
 					},
                 ],
 				
-				onClickCell: function(field, value, row, $element){
-					alert(field +"，"+value+"，"+row.name);
+				onClickCell: (field, value, row, $element) => {
+					if (field == "name") {
+						$.ajax({
+							type: "post",
+							url: "/info",
+							contentType: "application/json",
+							data: JSON.stringify(row),
+							dataType: "JSON",
+							success: (res) => {
+								if (res.url != "None") {
+									const url = `/homepage?lan=en&user_id=${res.url}`;
+									window.open(url, '_blank').location;
+								}
+							}
+						});
+					}
 				}
 			});
 		};
@@ -247,8 +265,9 @@
             leftChart.resize();
 		};
 		
+		const url = "/hindex";
 		const otable = new tableinit();
-		otable.init();
+		otable.init(url);
 	});
 </script>
 

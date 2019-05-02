@@ -45,7 +45,7 @@
 	<nav class="navbar navbar-inverse  navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/zh-cn">数据分析</a>
+				<a class="navbar-brand" href="/zh_cn">数据分析</a>
 			</div>
 		</div>
 	</nav>
@@ -168,12 +168,12 @@
 
 	const tableinit = function() {
 		const otableinit = new Object();
-		otableinit.init = () => {
+		otableinit.init = (url) => {
 			$table.bootstrapTable({
                 toolbar: "#toolbar",
                 showRefresh: true,
                 showColumns: true,
-				url: "/hindex",
+				url: url,
 				sidePagination:'server',
                 method: 'get',
                 cache: false,
@@ -191,7 +191,11 @@
                 columns: [
                     {
                         title: "姓名",
-                        field: "name"
+						field: "name",
+						formatter: (value, row, index) => {
+							let p = `<p style='color: #428bca'>${value}</a>`;
+							return p;
+						}
 					},
 					
 					{
@@ -228,7 +232,25 @@
                         title: "活跃度",
                         field: "activity"
 					},
-                ]
+				],
+				
+				onClickCell: (field, value, row, $element) => {
+					if (field == "name") {
+						$.ajax({
+							type: "post",
+							url: "/info",
+							contentType: "application/json",
+							data: JSON.stringify(row),
+							dataType: "JSON",
+							success: (res) => {
+								if (res.url != "None") {
+									const url = `/homepage?lan=zh_cn&user_id=${res.url}`;
+									window.open(url, '_blank').location;
+								}
+							}
+						});
+					}
+				}
             });
 		};
 		return otableinit;
@@ -243,8 +265,9 @@
             leftChart.resize();
 		};
 		
+		const url = "/hindex";
 		const otable = new tableinit();
-		otable.init();
+		otable.init(url);
 	});
 </script>
 

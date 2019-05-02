@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e0aba60-3618-4d15-82f8-3c745d3c266c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/collaborative_filtering/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collaborative_filtering/cf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysqldb/update_similarity.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysqldb/dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysqldb/dao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spider.log" beforeDir="false" afterPath="$PROJECT_DIR$/spider.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcrawler/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/webcrawler/log.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcrawler/spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/webcrawler/spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Web/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Web/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Web/controllers/common.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Web/controllers/common.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Web/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Web/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Web/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../Web/views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Web/views/info.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../Web/views/info.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Web/views/info_zhcn.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../Web/views/info_zhcn.ejs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +45,50 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mysqldb/update_similarity.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="57" column="26" lean-forward="true" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/collaborative_filtering/cf.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mysqldb/setting.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="4" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mysqldb/dao.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="93" column="8" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -56,8 +100,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>host</find>
-      <find>add</find>
       <find>__na</find>
       <find>items</find>
       <find>正在测试</find>
@@ -86,6 +128,8 @@
       <find>Log(</find>
       <find>self.log.</find>
       <find>add_file_handler</find>
+      <find>self._</find>
+      <find>int(</find>
     </findStrings>
     <replaceStrings>
       <replace>%s</replace>
@@ -127,17 +171,18 @@
         <option value="$PROJECT_DIR$/dbtofile/interest_person.txt" />
         <option value="$PROJECT_DIR$/dbtofile/hdfs.py" />
         <option value="$PROJECT_DIR$/webcrawler/spider.py" />
-        <option value="$PROJECT_DIR$/mysqldb/dao.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/collaborative_filtering/cf.py" />
         <option value="$PROJECT_DIR$/spider.log" />
         <option value="$PROJECT_DIR$/webcrawler/log.py" />
+        <option value="$PROJECT_DIR$/mysqldb/dao.py" />
+        <option value="$PROJECT_DIR$/mysqldb/update_similarity.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="162" />
-    <option name="y" value="266" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="372" />
+    <option name="y" value="192" />
     <option name="width" value="1119" />
     <option name="height" value="728" />
   </component>
@@ -222,7 +267,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.cf">
+  <component name="RunManager" selected="Python.update_similarity">
     <configuration name="cf" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DistributedCrawler" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -311,7 +356,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_dao" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="update_similarity" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DistributedCrawler" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -319,12 +364,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mysqldb" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/test_dao.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mysqldb/update_similarity.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -335,11 +380,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.update_similarity" />
         <item itemvalue="Python.cf" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.hdfs" />
         <item itemvalue="Python.insert (1)" />
-        <item itemvalue="Python.test_dao" />
       </list>
     </recent_temporary>
   </component>
@@ -370,21 +415,23 @@
       <workItem from="1554191741673" duration="874000" />
       <workItem from="1556367369403" duration="2584000" />
       <workItem from="1556370550234" duration="6694000" />
+      <workItem from="1556798500168" duration="4443000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79219000" />
+    <option name="totallyTimeSpent" value="83662000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="162" y="266" width="1119" height="728" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20302172" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11673774" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.6319328" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.058504876" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -407,6 +454,7 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/DistributedCrawler$update_similarity.coverage" NAME="update_similarity Coverage Results" MODIFIED="1556799269198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysqldb" />
     <SUITE FILE_PATH="coverage/DistributedCrawler$hdfs.coverage" NAME="hdfs Coverage Results" MODIFIED="1554090250330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dbtofile" />
     <SUITE FILE_PATH="coverage/DistributedCrawler$main.coverage" NAME="main Coverage Results" MODIFIED="1556373218927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DistributedCrawler$cf.coverage" NAME="cf Coverage Results" MODIFIED="1556373629817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/collaborative_filtering" />
@@ -525,7 +573,6 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/requests/models.py" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/pymysql/cursors.py" />
     <entry file="file://$PROJECT_DIR$/test/test_dao.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -537,16 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
           <caret line="1473" column="8" selection-start-line="1473" selection-start-column="8" selection-end-line="1473" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/insert.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="7" column="72" selection-start-line="7" selection-start-column="72" selection-end-line="7" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -596,13 +633,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysqldb/setting.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/proxypool/db.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="912">
@@ -647,22 +677,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysqldb/dao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="15" column="37" lean-forward="true" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <element signature="e#1144#1568#0" />
-            <element signature="e#1609#1984#0" />
-            <element signature="e#2043#2720#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test.log" />
     <entry file="file://$PROJECT_DIR$/webcrawler/spider.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -712,10 +727,51 @@
       </provider>
       <provider editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/insert.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="72" selection-start-line="7" selection-start-column="72" selection-end-line="7" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/pymysql/cursors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="169" column="23" selection-start-line="169" selection-start-column="17" selection-end-line="169" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysqldb/setting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysqldb/update_similarity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="57" column="26" lean-forward="true" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysqldb/dao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="93" column="8" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/collaborative_filtering/cf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+        <state relative-caret-position="152">
+          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>

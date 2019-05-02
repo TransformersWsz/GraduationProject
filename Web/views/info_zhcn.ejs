@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= name %></title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+	<link type="text/css" rel='stylesheet' href='/css/bootstrap.min.css' />
+    <link type="text/css" rel='stylesheet' href='/css/bootstrap-table.min.css' />
+    <link type="text/css" rel='stylesheet' href='/css/info.css' />
+	<link rel="icon" type="image/png" href="/img/favicon.ico" />
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-table.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-table-zh-CN.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-table-toolbar.js"></script>
+    
+    <style>
+        .out {
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+
+<body class="profile-page">
+    <div>
+        <div class="page-header page-header-small" >
+            <div class="container">
+                <div class="content-center">
+                    <div class="photo-container">
+                        <img src="/img/researcher.jpg" alt="">
+                    </div>
+
+                    <h3 class="title"><%= name %></h3>
+                    <p class="category">研究人员</p>
+
+                    <div class="content">
+                        <div class="social-description">
+                            <h2><%= sociability %></h2>
+                            <p>群集度</p>
+                        </div>
+                        <div class="social-description">
+                            <h2><%= diversity %></h2>
+                            <p>多样性</p>
+                        </div>
+                        <div class="social-description">
+                            <h2><%= activity %></h2>
+                            <p>活跃度</p>
+                        </div>
+                    </div>
+
+                    <div class="secondcontent">
+                        <div class="social-description">
+                            <h2><%= paper %></h2>
+                            <p>论文数</p>
+                        </div>
+                        <div class="social-description">
+                            <h2><%= h_index %></h2>
+                            <p>h指数</p>
+                        </div>
+                        <div class="social-description">
+                            <h2><%= g_index %></h2>
+                            <p>g指数</p>
+                        </div>
+                        <div class="social-description">
+                            <h2><%= citation %></h2>
+                            <p>引用次数</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toolbar" class="btn-group">
+        <button type="button" class="btn btn-default" onclick="exportSimilarityExcel()">
+            <i class="glyphicon glyphicon-export"></i>
+        </button>
+
+        <button type="button" class="btn btn-default dropdown-toggle" style="margin-left: 10px" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            中文 <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="<%= '/homepage?lan=en&user_id=' + user_id %>">en</a></li>
+        </ul>
+    </div>
+
+    <div class="out">
+        <table id="table" data-show-fullscreen="true"></table>
+    </div>
+</body>
+<script>
+    var $table = $("#table");
+    var user_id = <%= user_id %>;
+
+    function test() {
+    }
+
+    // 获取当前学者的 user_id
+    function getUserId() {
+        const currentUrl = window.location.href;
+        const index = currentUrl.indexOf("user_id=");
+        user_id = parseInt(currentUrl.slice(46));
+    }
+
+    // 导出当前学者的前10名相似学者
+    function exportSimilarityExcel() {
+        window.location.href = `/similarityexcel?lan=zh_cn&user_id=${user_id}`;
+    }
+
+    const tableinit = function () {
+        const otableinit = new Object();
+        otableinit.init = (url) => {
+            $table.bootstrapTable({
+                toolbar: "#toolbar",
+                showRefresh: true,
+                showColumns: true,
+                url: url,
+                method: 'get',
+                cache: false,
+                striped: true,
+                pagination: true,
+                search: true,
+                searchOnEnterKey: true,
+                columns: [
+                    {
+                        title: "姓名",
+                        field: "name",
+                        formatter: (value, row, index) => {
+                            let p = `<p style='color: #428bca'>${value}</a>`;
+                            return p;
+                        }
+                    },
+
+                    {
+                        title: "h指数",
+                        field: "h_index"
+                    },
+
+                    {
+                        title: "g指数",
+                        field: "g_index"
+                    },
+
+                    {
+                        title: "论文数",
+                        field: "paper"
+                    },
+
+                    {
+                        title: "引用次数",
+                        field: "citation"
+                    },
+
+                    {
+                        title: "群集度",
+                        field: "sociability"
+                    },
+
+                    {
+                        title: "多样性",
+                        field: "diversity"
+                    },
+
+                    {
+                        title: "活跃度",
+                        field: "activity"
+                    },
+                ],
+
+                onClickCell: (field, value, row, $element) => {
+                    if (field == "name") {
+                        $.ajax({
+                            type: "post",
+                            url: "/info",
+                            contentType: "application/json",
+                            data: JSON.stringify(row),
+                            dataType: "JSON",
+                            success: (res) => {
+                                if (res.url != "None") {
+                                    const url = `/homepage?lanzh_cn&user_id=${res.url}`;
+                                    window.open(url, '_blank').location;
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        };
+        return otableinit;
+    };
+
+    $(() => {
+
+        const tableDataUrl = `/similarity?user_id=${user_id}`;
+        const otable = new tableinit();
+        otable.init(tableDataUrl);
+    });
+</script>
+</html>

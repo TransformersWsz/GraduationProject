@@ -1,16 +1,41 @@
 const nodeExcel = require("excel-export");
 
-// 获取学者的个人信息
-const getInfo = (db, req, res, next) => {
-    const info = "";
-    const sql = "select name, paper, citation, h_index, g_index, sociability, diversity, activity from user where user_id = ?";
+// 获取学者的user_id
+const getUserId = (db, req, res, next) => {
+    let sql = "select user_id from user where name = ? and h_index = ? and g_index = ? and paper = ? and citation = ? and sociability = ? and diversity = ? and activity = ?;"
+
     db.sequelize.query(sql, {
-        replacements: [parseInt(req.query.offset)],
+        replacements: [req.body.name, parseFloat(req.body.h_index), parseFloat(req.body.g_index), parseInt(req.body.paper), parseInt(req.body.citation), parseInt(req.body.sociability), parseInt(req.body.diversity), parseInt(req.body.activity)],
         type: db.sequelize.QueryTypes.SELECT
-    }).then((selectInfoRes) => {
-        info = selectInfoRes[0];
+    }).then((selectUserIdRes) => {
+        let result = {
+            url: "None"
+        };
+        if (selectUserIdRes.length != 0) {
+            result.url = selectUserIdRes[0].user_id;
+        }
+        res.json(result);
     });
-    return info;
+};
+
+// 获取学者的个人信息
+const getUserInfo = (db, req, res, next) => {
+    const promise = new Promise((resolve, reject) => {
+        let sql = "select user_id, name, h_index, g_index, paper, citation, sociability, diversity, activity from user where user_id = ?";
+        db.sequelize.query(sql, {
+            replacements: [parseInt(req.query.user_id)],
+            type: db.sequelize.QueryTypes.SELECT
+        }).then((selectUserInfoRes) => {
+            if (selectUserInfoRes.length != 0) {
+                resolve(selectUserInfoRes[0]);
+            }
+            else {
+                reject({});
+            }
+        });
+    });
+
+    return promise;
 };
 
 // 获取各研究领域的人数
@@ -135,6 +160,20 @@ const getHindex = (db, req, res, next) => {
     
 };
 
+// 获取某个学者的前10名相似学者
+const getSimilarity = (db, req, res, next) => {
+    const sql = "select name, h_index, g_index, paper, citation, sociability, diversity, activity from (select f_user_id, s_user_id, distance from similarity where  s_user_id = ? or f_user_id = ? order by distance desc limit 0, 10) temp join user on (temp.f_user_id=user.user_id and temp.f_user_id != ?) or (temp.s_user_id=user.user_id and temp.s_user_id != ?)";
+
+    db.sequelize.query(sql, {
+        replacements: [parseInt(req.query.user_id), parseInt(req.query.user_id), parseInt(req.query.user_id), parseInt(req.query.user_id)],
+        type: db.sequelize.QueryTypes.SELECT
+    }).then((selectSimilarityRes) => {
+        res.json({
+            data: selectSimilarityRes
+        });
+    });
+};
+
 const formatResult = (selectRes) => {
     const result = [];
     selectRes.map((item) => {
@@ -246,11 +285,109 @@ const exportExcel = (db, req, res, next) => {
     });
 };
 
+const exportSimilarityExcel = (db, req, res, next) => {
+    let name = "aminers";
+    let cols = [
+        {
+            caption: "name",
+            type: "string",
+            width: 40
+        }, 
+        {
+            caption:"h_index",
+            type:"number"				
+        }, 
+        {
+            caption:"paper",
+            type:"number"				
+        }, 
+        {
+            caption:"citation",
+            type:"number"				
+        },
+        {
+            caption:"g_index",
+            type:"number"				
+        },
+        {
+            caption:"sociability",
+            type:"number"				
+        },
+        {
+            caption:"diversity",
+            type:"number"				
+        },
+        {
+            caption:"activity",
+            type:"number"				
+        }
+    ];
+    let filename = "similar aminers.xlsx";
+
+    if (req.query.lan == "zh_cn") {
+        cols = [
+            {
+                caption: "姓名",
+                type: "string",
+                width: 30
+            }, 
+            {
+                caption: "h指数",
+                type: "number"				
+            }, 
+            {
+                caption: "论文数",
+                type: "number"				
+            }, 
+            {
+                caption: "引用次数",
+                type: "number"				
+            },
+            {
+                caption: "g指数",
+                type: "number"				
+            },
+            {
+                caption: "群集度",
+                type: "number"				
+            },
+            {
+                caption: "多样性",
+                type: "number"				
+            },
+            {
+                caption: "活跃度",
+                type: "number"				
+            }
+        ];
+        filename = encodeURI("相似学者.xlsx");
+    }
+
+    const sql = "select name, h_index, g_index, paper, citation, sociability, diversity, activity from (select f_user_id, s_user_id, distance from similarity where  s_user_id = ? or f_user_id = ? order by distance desc limit 0, 10) temp join user on (temp.f_user_id=user.user_id and temp.f_user_id != ?) or (temp.s_user_id=user.user_id and temp.s_user_id != ?)";
+
+    db.sequelize.query(sql, {
+        replacements: [parseInt(req.query.user_id), parseInt(req.query.user_id), parseInt(req.query.user_id), parseInt(req.query.user_id)],
+        type: db.sequelize.QueryTypes.SELECT
+    }).then((result) => {
+        var conf = {};
+        conf.name = name;
+        conf.cols = cols;
+        conf.rows = formatResult(result);
+        var excelFile = nodeExcel.execute(conf);
+        res.setHeader('Content-Type', 'application/vnd.openxmlformats;charset=utf-8');
+        res.setHeader("Content-Disposition", `attachment; filename=${filename}`);
+        res.end(excelFile, "binary");
+    });
+};
+
 const commonController = {};
-commonController.getInfo = getInfo;
+commonController.getUserId = getUserId;
+commonController.getUserInfo = getUserInfo;
 commonController.getPerson = getPerson;
 commonController.getWeight = getWeight;
 commonController.getHindex = getHindex;
+commonController.getSimilarity = getSimilarity;
 commonController.exportExcel = exportExcel;
+commonController.exportSimilarityExcel = exportSimilarityExcel;
 
 module.exports = commonController;
