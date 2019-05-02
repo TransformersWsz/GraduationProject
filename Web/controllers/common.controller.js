@@ -2,7 +2,7 @@ const nodeExcel = require("excel-export");
 
 // 获取学者的个人信息
 const getInfo = (db, req, res, next) => {
-    const info;
+    const info = "";
     const sql = "select name, paper, citation, h_index, g_index, sociability, diversity, activity from user where user_id = ?";
     db.sequelize.query(sql, {
         replacements: [parseInt(req.query.offset)],

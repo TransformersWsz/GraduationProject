@@ -188,6 +188,7 @@
                     return params;
                 },
                 columns: [
+
                     {
                         title: "name",
                         field: "name"
@@ -227,8 +228,12 @@
                         title: "activity",
                         field: "activity"
 					},
-                ]
-            });
+                ],
+				
+				onClickCell: function(field, value, row, $element){
+					alert(field +"，"+value+"，"+row.name);
+				}
+			});
 		};
 		return otableinit;
 	};
