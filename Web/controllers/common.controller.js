@@ -162,7 +162,7 @@ const getHindex = (db, req, res, next) => {
 
 // 获取某个学者的前10名相似学者
 const getSimilarity = (db, req, res, next) => {
-    const sql = "select name, h_index, g_index, paper, citation, sociability, diversity, activity from (select f_user_id, s_user_id, distance from similarity where  s_user_id = ? or f_user_id = ? order by distance desc limit 0, 10) temp join user on (temp.f_user_id=user.user_id and temp.f_user_id != ?) or (temp.s_user_id=user.user_id and temp.s_user_id != ?)";
+    const sql = "select name, h_index, g_index, paper, citation, sociability, diversity, activity from (select f_user_id, s_user_id, distance from similarity where  s_user_id = ? or f_user_id = ? order by distance limit 0, 10) temp join user on (temp.f_user_id=user.user_id and temp.f_user_id != ?) or (temp.s_user_id=user.user_id and temp.s_user_id != ?)";
 
     db.sequelize.query(sql, {
         replacements: [parseInt(req.query.user_id), parseInt(req.query.user_id), parseInt(req.query.user_id), parseInt(req.query.user_id)],
@@ -363,7 +363,7 @@ const exportSimilarityExcel = (db, req, res, next) => {
         filename = encodeURI("相似学者.xlsx");
     }
 
-    const sql = "select name, h_index, g_index, paper, citation, sociability, diversity, activity from (select f_user_id, s_user_id, distance from similarity where  s_user_id = ? or f_user_id = ? order by distance desc limit 0, 10) temp join user on (temp.f_user_id=user.user_id and temp.f_user_id != ?) or (temp.s_user_id=user.user_id and temp.s_user_id != ?)";
+    const sql = "select name, h_index, g_index, paper, citation, sociability, diversity, activity from (select f_user_id, s_user_id, distance from similarity where  s_user_id = ? or f_user_id = ? order by distance limit 0, 10) temp join user on (temp.f_user_id=user.user_id and temp.f_user_id != ?) or (temp.s_user_id=user.user_id and temp.s_user_id != ?)";
 
     db.sequelize.query(sql, {
         replacements: [parseInt(req.query.user_id), parseInt(req.query.user_id), parseInt(req.query.user_id), parseInt(req.query.user_id)],

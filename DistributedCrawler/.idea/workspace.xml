@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e0aba60-3618-4d15-82f8-3c745d3c266c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mysqldb/update_similarity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysqldb/dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysqldb/dao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Web/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Web/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Web/controllers/common.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Web/controllers/common.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Web/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Web/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Web/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../Web/views/index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Web/views/info.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../Web/views/info.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Web/views/info_zhcn.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../Web/views/info_zhcn.ejs" afterDir="false" />
-    </list>
+    <list default="true" id="5e0aba60-3618-4d15-82f8-3c745d3c266c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +171,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds">
     <option name="x" value="372" />
     <option name="y" value="192" />
     <option name="width" value="1119" />
@@ -415,23 +406,23 @@
       <workItem from="1554191741673" duration="874000" />
       <workItem from="1556367369403" duration="2584000" />
       <workItem from="1556370550234" duration="6694000" />
-      <workItem from="1556798500168" duration="4443000" />
+      <workItem from="1556798500168" duration="5041000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83662000" />
+    <option name="totallyTimeSpent" value="84260000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="372" y="192" width="1119" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11673774" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20679887" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.058504876" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.090756305" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
