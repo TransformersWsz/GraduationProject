@@ -42,7 +42,7 @@ class Spider(object):
                     break
                 else:
                     try:
-                        url = "https://api.aminer.cn/api/leaderboard/person/list/g_index/offset/{offset}/size/{size}".format(offset=offset, size=size)
+                        url = "https://api.aminer.cn/api/leaderboard/person/list/h_index/offset/{offset}/size/{size}".format(offset=offset, size=size)
                         response = requests.get(url)
                         self.insert_data(response.json()["data"])
                         self.log.info("{url} 爬取成功".format(url=url))

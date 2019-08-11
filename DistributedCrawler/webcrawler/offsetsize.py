@@ -31,16 +31,24 @@ class Offsetsize(object):
         并发控制下的 get_offset_size
         :return: (offset, size)
         """
-        lockRes = 0
+        lock_res = 0
         # 获取锁
-        while lockRes != 1:
+        while lock_res != 1:
             now = int(time.time())
             lock_timeout = now + LOCK_TIMEOUT + 1
-            lockRes = self.redisClient.setnx(LOCK_NAME, lock_timeout)
-            if lockRes == 1 or (now > int(self.redisClient.get(LOCK_NAME))) and now > int(self.redisClient.getset(LOCK_NAME, lock_timeout)):
+            lock_res = self.redisClient.setnx(LOCK_NAME, lock_timeout)
+            if lock_res == 1:
                 break
             else:
-                time.sleep(0.01)
+                old_expire_time = self.redisClient.get(LOCK_NAME)
+                if now > old_expire_time:
+                    current_expire_time = self.redisClient.getset(LOCK_NAME, lock_timeout)
+                    if old_expire_time == current_expire_time:
+                        break
+                    else:
+                        time.sleep(0.01)
+                else:
+                    time.sleep(0.01)
 
         # 执行业务逻辑
         result = self.get_offset_size()

@@ -26,10 +26,10 @@ router.get("/homepage", (req, res, next) => {
 	}).catch((error) => {
 		res.json(error);
 	});
-})
+});
 
 /* 接收研究人员的信息，返回研究人员的user_id. */
-router.post("/info", function (req, res, next) {
+router.post("/info", (req, res, next) => {
 	commonController.getUserId(db, req, res, next);
 });
 

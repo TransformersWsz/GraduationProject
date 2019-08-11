@@ -18,7 +18,7 @@ def index():
 def get_proxy():
     """
     获取一个随机代理
-    :return: 随机代理
+    :return: ip:port
     """
     conn = get_conn()
     return conn.random()

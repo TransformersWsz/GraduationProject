@@ -18,7 +18,7 @@ class RedisClient(object):
 
     def add(self, proxy, score=INITIAL_SCORE):
         """
-        添加新代理，设置初始分数为10
+        添加新代理，设置初始分数为50
         :param proxy: 新代理
         :param score: 分数
         :return: 添加结果
